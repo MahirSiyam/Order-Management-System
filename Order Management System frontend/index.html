@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" data-theme="winter">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#f8fafc" />
+    <meta name="application-name" content="InventraX" />
+    <!-- Tab icon: gradient X (sky → indigo → violet, like InventraXWordmark); full PNG for iOS -->
+    <link rel="icon" type="image/svg+xml" href="/inventrax-x-icon.svg" />
+    <link rel="apple-touch-icon" href="/inventrax-wordmark.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InventraX — Smart inventory &amp; orders</title>
+  </head>
+  <body>
+    <!-- Outside #root: public/inventrax-wordmark.png — removed after App mounts -->
+    <div
+      id="app-boot-splash"
+      style="
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 16px;
+        background: #f8fafc;
+      "
+    >
+      <img
+        src="/inventrax-wordmark.png"
+        alt="InventraX"
+        width="280"
+        height="80"
+        style="max-height: 7rem; width: auto; max-width: min(340px, 90vw); height: auto"
+        decoding="async"
+        fetchpriority="high"
+      />
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
