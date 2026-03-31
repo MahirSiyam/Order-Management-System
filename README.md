@@ -92,6 +92,19 @@ Never commit real `.env` files or Firebase service account keys.
 - Run the **backend** with `NODE_ENV=production`, a strong `JWT_SECRET`, and locked-down `CORS_ORIGIN`.  
 - Ensure MongoDB indexes/backups and Firebase authorized domains match your deployment hostnames.  
 
+## Deploy on Vercel (separate projects)
+
+Use **two Vercel projects** from this repo:
+
+| Project | Root directory | Notes |
+| ------- | -------------- | ----- |
+| API | `Order Management System backend` | Serverless Express via `api/index.js` + `vercel.json` |
+| Web | `Order Management System frontend` | Vite static build + SPA rewrite in `vercel.json` |
+
+You need **cloud MongoDB** (e.g. Atlas). Set backend env vars (`MONGODB_URI`, `JWT_SECRET`, `CORS_ORIGIN` → your frontend URL) and frontend build env (`VITE_USE_REMOTE_API=true`, `VITE_API_BASE_URL=https://<backend>.vercel.app/api`).
+
+Step-by-step checklist: **[VERCEL.md](./VERCEL.md)**.
+
 ## License
 
 Private / unlicensed unless you add a `LICENSE` file.

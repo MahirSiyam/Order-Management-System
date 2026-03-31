@@ -5,3 +5,5 @@ node_modules/
 serviceAccountKey.json
 firebase-service-account.json
 *-firebase-adminsdk-*.json
+
+.vercel
